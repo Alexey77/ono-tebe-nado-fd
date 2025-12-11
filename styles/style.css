@@ -67,20 +67,15 @@
 
 
 .main {
-    display: grid;
-    grid-template-columns: 1fr;
-    grid-template-rows: 760px 905px 775px;
-    grid-template-areas:
-      "intro"
-      "lots"
-      "about";
+    display: flex;
+    flex-direction: column;
     grid-area: main;
 }
 
 .intro {
     display: flex;
     flex-direction: column;
-    grid-area: intro;
+    min-height: 760px;
 
     color: #fff;
     background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
@@ -153,13 +148,12 @@
     background-color: transparent;
 }
 
+
 .lots {
     display: flex;
     flex-direction: column;
-    grid-area: lots;
-    margin-top: 180px;
-
-
+    min-height: 905px;
+    padding-top: 180px;
 }
 
 .lots__header {
@@ -167,14 +161,13 @@
     margin-left: 65px;
     font-size: 40px;
     text-transform: uppercase;
-
 }
 
 .lots__cards {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
+    display: flex;
+    flex-wrap: wrap;
     gap: 25px;
-    margin: auto;
+    margin: 30px auto 0;
     color: #fff;
 }
 
@@ -186,10 +179,7 @@
     width: 335px;
     height: 595px;
     background-position: center;
-
     background-size: cover;
-
-
 }
 
 .lots__cards .lot-card:nth-child(1) {
@@ -202,40 +192,38 @@
 
 .lots__cards .lot-card:nth-child(3) {
     background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("../images/card-lot-03.jpg");
-
 }
+
 
 .lot-card__header {
     display: block;
     align-self: start;
     width: 255px;
     margin: 0 auto;
-    padding-top: 47px;
+    padding-top: 45px;
     font-weight: bold;
     font-size: 22px;
     text-decoration: underline;
     text-underline-offset: 3px;
     text-transform: uppercase;
-
 }
 
 .lot-card__text {
     display: block;
     align-self: end;
     width: 255px;
-
     margin: 0 auto;
-    padding-bottom: 53px;
+    padding-bottom: 50px;
     font-size: 20px;
-
 }
 
 .lots__link-more {
     display: block;
+    margin-top: 30px;
     padding-left: 65px;
     font-size: 20px;
     text-decoration: underline;
-    text-underline-offset: 3px;
+    text-underline-offset: 4px;
 }
 
 
@@ -243,7 +231,7 @@
     display: grid;
     grid-template-columns: 375px 1fr;
     grid-template-rows: 340px 1fr;
-    grid-area: about;
+    min-height: 775px;
 }
 
 .about__logo {
